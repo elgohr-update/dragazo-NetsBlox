@@ -32,7 +32,7 @@ jobs:
         if: github.event_name == 'push'
         
       - name: Publish to Docker Hub
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: netsblox/base
           dockerfile: Dockerfile.base
@@ -41,7 +41,7 @@ jobs:
           tags: "${{ env.TAG }},${{ env.RELEASE_TAG }}"
 
       - name: Publish to Docker Hub
-        uses: elgohr/Publish-Docker-Github-Action@master
+        uses: elgohr/Publish-Docker-Github-Action@v5
         with:
           name: netsblox/server
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
